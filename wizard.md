@@ -63,15 +63,16 @@ Based on the recurring task I mentioned and anything else that came up, suggest 
 STEP 6 — SET UP THE WORKSPACE
 
 Now:
-1. Clone https://github.com/your-org/claude-context into a local folder
-2. Write all the files we just created into the correct locations
-3. Update CLAUDE.md to reference the memory layer and skills
-4. Ask me what to name my private GitHub repo
-5. Create it using the GitHub CLI, set it as the remote, push everything
-   with commit message: "init: my claude-context workspace v1.0.0"
+1. Write all the files we just created into the correct locations in this repo
+2. Update CLAUDE.md to reference the memory layer and skills
+3. Ask me what to name my private GitHub repo
+4. Remove the template remote: git remote remove origin
+5. Create my private repo and set it as origin: gh repo create {name} --private --source=. --remote=origin --push
+   Use commit message: "init: my claude-context workspace v1.0.0"
 6. Tell me the repo URL
 
 Handle all git and GitHub setup entirely. I should not need to type a single command.
+This folder is now my personal workspace. Every time I open Claude Code here, it loads my context.
 
 ---
 
