@@ -1,4 +1,4 @@
-# claude-context Specification
+# Claude Code Workspace Specification
 
 **Version:** 1.0.0
 **Status:** Draft
@@ -8,7 +8,7 @@
 
 ## Overview
 
-`claude-context` defines a workspace convention for Claude Code that enables persistent, mode-aware sessions. It is a file structure, a set of naming conventions, and a `CLAUDE.md` contract — not a library, plugin, or binary.
+`Claude Code Workspace` defines a workspace convention for Claude Code that enables persistent, mode-aware sessions. It is a file structure, a set of naming conventions, and a `CLAUDE.md` contract — not a library, plugin, or binary.
 
 ---
 

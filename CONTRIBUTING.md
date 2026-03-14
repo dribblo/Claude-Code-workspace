@@ -1,6 +1,6 @@
-# Contributing to claude-context
+# Contributing to Claude Code Workspace
 
-`claude-context` is a community standard. It gets better when more people bring their workflows to it.
+`Claude Code Workspace` is a community standard. It gets better when more people bring their workflows to it.
 
 ## What we're looking for
 

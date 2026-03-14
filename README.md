@@ -1,19 +1,19 @@
-# claude-context
+# Claude Code Workspace
 
 > The standard for Claude Code workspaces.
 
-`claude-context` is an open convention for making Claude Code context-aware from the first message of every session. Instead of re-explaining who you are and what you're working on every time, Claude Code reads your workspace and asks which mode to start in.
+`Claude Code Workspace` is an open convention for making Claude Code context-aware from the first message of every session. Instead of re-explaining who you are and what you're working on every time, Claude Code reads your workspace and asks which mode to start in.
 
 **Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — available in the terminal or inside the Claude desktop app.
 
 <!-- TODO: Add demo GIF showing the wizard and mode selector in action -->
-<!-- ![claude-context demo](demo.gif) -->
+<!-- ![Claude Code Workspace demo](demo.gif) -->
 
 ---
 
 ## How it works
 
-Claude Code automatically reads `CLAUDE.md` at the start of every session. `claude-context` defines what that file should contain — and how to structure the rest of your workspace — so Claude always starts informed, focused, and in the right mode.
+Claude Code automatically reads `CLAUDE.md` at the start of every session. `Claude Code Workspace` defines what that file should contain — and how to structure the rest of your workspace — so Claude always starts informed, focused, and in the right mode.
 
 ```
 Your repo/
@@ -121,7 +121,7 @@ Say any of these during a session:
 
 Claude Code is powerful out of the box — but blank. Every session starts the same way: you explain who you are, what you're working on, how you like to communicate. Again. And again.
 
-`claude-context` solves this with a simple convention: a structured workspace that Claude Code understands from the first word. It's not a plugin, an extension, or a wrapper. It's a file structure and a spec. It works today, with the Claude Code you already have, with no installs.
+`Claude Code Workspace` solves this with a simple convention: a structured workspace that Claude Code understands from the first word. It's not a plugin, an extension, or a wrapper. It's a file structure and a spec. It works today, with the Claude Code you already have, with no installs.
 
 ---
 

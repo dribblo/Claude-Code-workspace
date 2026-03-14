@@ -1,4 +1,4 @@
-# claude-context Wizard
+# Claude Code Workspace Wizard
 
 The prompt that builds your personal Claude Code workspace from scratch. Designed for knowledge workers — no technical knowledge required.
 
@@ -13,7 +13,7 @@ STEP 0 — PREREQUISITES CHECK
 
 Before anything else, verify:
 1. git is installed (run: git --version)
-2. We are inside a claude-context workspace (check for CLAUDE.md and .claude/ directory)
+2. We are inside a Claude Code Workspace (check for CLAUDE.md and .claude/ directory)
 
 If anything is missing, tell me exactly what to do to fix it — one command at a time. Do not continue until everything checks out.
 
@@ -102,7 +102,7 @@ STEP 8 — SAVE THE WORKSPACE
 Now:
 1. Write all the files we just created into the correct locations in this repo
 2. Update CLAUDE.md to reference the memory layer, skills, and templates
-3. Commit everything locally with message: "init: my claude-context workspace v1.0.0"
+3. Commit everything locally with message: "init: my Claude Code Workspace v1.0.0"
 
 Then ask: "Want me to back this up to a private GitHub repo? (requires GitHub CLI — say no if you're not sure)"
 
@@ -146,7 +146,7 @@ Tell me the 3 most useful things I can now ask you that I couldn't before — sp
 - **"status"** — see your current mode, session history, and workspace health
 - **"reset"** — re-run the wizard from scratch
 - **"export"** — create a shareable, anonymised version of your workspace setup
-- **"update"** — pull the latest improvements from the claude-context template
+- **"update"** — pull the latest improvements from the Claude Code Workspace template
 
 Then ask: what's the first thing you'd like to tackle?
 ```
