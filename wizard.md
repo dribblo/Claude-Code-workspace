@@ -148,7 +148,7 @@ Tell me the 3 most useful things I can now ask you that I couldn't before — sp
 - **"export"** — create a shareable, anonymised version of your workspace setup
 - **"update"** — pull the latest improvements from the Claude Code Workspace template
 
-Then ask: what's the first thing you'd like to tackle?
+Then automatically load the default mode: read the default mode file from .claude/modes/, acknowledge it in one sentence, and ask the kick-off question from that mode. The user is now in their first real session.
 ```
 
 ## What the wizard produces
