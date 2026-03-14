@@ -84,7 +84,24 @@ This folder is now my personal workspace. Every time I open Claude Code here, it
 
 ---
 
-STEP 7 — CLOSE WITH WHAT'S NEXT
+STEP 7 — MAKE IT EASY TO START
+
+Claude Code loads your workspace based on the folder you open it from. To make sure you always start in the right place, offer to create a shortcut:
+
+"Want me to add a shortcut so you can start Claude with your workspace by just typing `claude-work` in your terminal?"
+
+If yes:
+  - Detect the user's shell (bash or zsh)
+  - Add this line to their shell profile (~/.bashrc, ~/.zshrc, or equivalent):
+    alias claude-work="cd {workspace-path} && claude"
+  - Tell them: "Done. From now on, just open your terminal and type claude-work."
+
+If no:
+  - Tell them: "To start a session, open your terminal and run: cd {workspace-path} && claude"
+
+---
+
+STEP 8 — CLOSE WITH WHAT'S NEXT
 
 Tell me the 3 most useful things I can now ask you that I couldn't before — specific to what I told you about my work. Then ask: what's the first thing you'd like to tackle?
 ```
