@@ -6,6 +6,9 @@
 
 **Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — available in the terminal or inside the Claude desktop app.
 
+<!-- TODO: Add demo GIF showing the wizard and mode selector in action -->
+<!-- ![claude-context demo](demo.gif) -->
+
 ---
 
 ## How it works
@@ -20,6 +23,8 @@ Your repo/
       work.md        ← context for work tasks
       my-project.md  ← context for a specific project
       learning.md    ← context for study sessions
+    templates/       ← output formats (bug reports, stories, briefs)
+    skills/          ← reusable workflows
     config.json      ← your name, default mode, preferences
 ```
 
@@ -53,6 +58,20 @@ The wizard starts automatically. It will interview you about your work, build yo
 
 ---
 
+## Role packs
+
+Don't want to start from scratch? Role packs give you pre-built modes for your profession. The wizard detects them and offers them as a starting point.
+
+| Pack | Modes included |
+|---|---|
+| `product-owner` | Work (stories/ACs), Email, Bugs |
+| `founder` | Work (strategy), Investor comms, Hiring |
+| `consultant` | Work (deliverables), Client communication |
+
+More packs welcome — see `CONTRIBUTING.md`.
+
+---
+
 ## Modes
 
 A mode is a Markdown file that tells Claude:
@@ -73,6 +92,31 @@ A mode is a Markdown file that tells Claude:
 
 ---
 
+## Commands
+
+Say any of these during a session:
+
+| Command | What it does |
+|---|---|
+| `switch mode` | Change to a different mode mid-session |
+| `status` | See your current mode, session history, and workspace health |
+| `reset` | Re-run the wizard from scratch (backs up your files first) |
+| `update` | Pull the latest improvements from the template repo |
+| `export` | Create a shareable, anonymised version of your setup |
+
+---
+
+## Features
+
+- **Auto-save** — changes to your workspace are committed automatically
+- **Session memory** — Claude writes a summary at the end of every session
+- **Smart enrichment** — Claude suggests adding new terms, people, and decisions it notices during your session
+- **Output templates** — standardised formats for bugs, stories, emails, meeting briefs
+- **Workflow skills** — reusable workflows for recurring tasks
+- **Role packs** — pre-built starter modes for specific professions
+
+---
+
 ## Why this exists
 
 Claude Code is powerful out of the box — but blank. Every session starts the same way: you explain who you are, what you're working on, how you like to communicate. Again. And again.
@@ -83,7 +127,7 @@ Claude Code is powerful out of the box — but blank. Every session starts the s
 
 ## Contributing
 
-Contributions welcome — especially new mode templates. See `CONTRIBUTING.md`.
+Contributions welcome — especially new mode templates and role packs. See `CONTRIBUTING.md`.
 
 ---
 

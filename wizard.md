@@ -9,7 +9,27 @@ You are setting up a personal Claude Code workspace for me. This is not a coding
 
 ---
 
-STEP 1 — UNDERSTAND MY WORLD
+STEP 0 — PREREQUISITES CHECK
+
+Before anything else, verify:
+1. git is installed (run: git --version)
+2. We are inside a claude-context workspace (check for CLAUDE.md and .claude/ directory)
+
+If anything is missing, tell me exactly what to do to fix it — one command at a time. Do not continue until everything checks out.
+
+---
+
+STEP 1 — WELCOME
+
+Say this:
+
+"Hey — I'm going to ask you a few questions about how you work, then build a workspace that remembers everything. Takes about 10 minutes. After that, every Claude session starts already knowing you. Ready?"
+
+Wait for confirmation before continuing.
+
+---
+
+STEP 2 — UNDERSTAND MY WORLD
 
 Ask me the following questions one at a time. Wait for my full answer before asking the next one. Do not rush.
 
@@ -23,15 +43,20 @@ Do not move on until you have a clear picture of how I actually work.
 
 ---
 
-STEP 2 — SHOW ME WHAT'S POSSIBLE FOR SOMEONE LIKE ME
+STEP 3 — SHOW ME WHAT'S POSSIBLE FOR SOMEONE LIKE ME
 
 Based only on what I just told you — not generic features — give me 5 concrete things you could do for me that I probably haven't considered. Make them specific to my role and situation. Make them feel immediately useful. After each one, ask: does that resonate?
 
 ---
 
-STEP 3 — BUILD MY WORK MODES
+STEP 4 — BUILD MY WORK MODES
 
-Based on my answers, suggest 2–4 work modes that reflect how I actually operate. Not generic categories — modes shaped around my specific projects and responsibilities. For each one, explain why you're suggesting it. Let me adjust or remove any. For each confirmed mode, generate a context file that captures:
+First, check if a role pack exists in packs/ that matches my role. If one does, show it to me and ask: "I have a starter pack for your role. Want to use it as a base and customise from there, or build from scratch?"
+
+If using a pack: load its modes as starting points and let me edit each one.
+If building from scratch: suggest 2–4 work modes based on my answers.
+
+Not generic categories — modes shaped around my specific projects and responsibilities. For each one, explain why you're suggesting it. Let me adjust or remove any. For each confirmed mode, generate a context file that captures:
 - Who I am in this mode
 - What tasks it covers
 - How I want you to communicate with me
@@ -41,9 +66,9 @@ Show me each file before saving. Let me edit. Ask which should be my default. Sa
 
 ---
 
-STEP 4 — BUILD MY MEMORY LAYER
+STEP 5 — BUILD MY MEMORY LAYER
 
-Create the following files, asking me for the content of each:
+Create the following files, asking me for the content of each. If I say "skip", create the file with the template content and move on — don't ask again.
 
 - .claude/people.md — the people I mentioned: name, role, how we work together
 - .claude/glossary.md — terms, project names, acronyms, internal language I use
@@ -54,17 +79,29 @@ Create the following files, asking me for the content of each:
 
 ---
 
-STEP 5 — BUILD MY WORKFLOW LIBRARY
+STEP 6 — BUILD MY WORKFLOW LIBRARY
 
 Based on the recurring task I mentioned and anything else that came up, suggest 2–3 workflows that would save me real time. For each one I confirm, ask how I currently do it and what good looks like, then generate a workflow file in .claude/skills/.
 
 ---
 
-STEP 6 — SAVE THE WORKSPACE
+STEP 7 — BUILD MY OUTPUT TEMPLATES
+
+Based on the work I described, suggest 2–3 output templates — standard formats I'll use repeatedly. Examples:
+- A bug report template
+- An email format
+- A user story structure
+- A meeting brief layout
+
+For each one I confirm, generate a template file in .claude/templates/. These templates tell Claude exactly what format to use when producing that type of output.
+
+---
+
+STEP 8 — SAVE THE WORKSPACE
 
 Now:
 1. Write all the files we just created into the correct locations in this repo
-2. Update CLAUDE.md to reference the memory layer and skills
+2. Update CLAUDE.md to reference the memory layer, skills, and templates
 3. Commit everything locally with message: "init: my claude-context workspace v1.0.0"
 
 Then ask: "Want me to back this up to a private GitHub repo? (requires GitHub CLI — say no if you're not sure)"
@@ -84,7 +121,7 @@ This folder is now my personal workspace. Every time I open Claude Code here, it
 
 ---
 
-STEP 7 — MAKE IT EASY TO START
+STEP 9 — MAKE IT EASY TO START
 
 Claude Code loads your workspace based on the folder you open it from. To make sure you always start in the right place, offer to create a shortcut:
 
@@ -101,15 +138,23 @@ If no:
 
 ---
 
-STEP 8 — CLOSE WITH WHAT'S NEXT
+STEP 10 — CLOSE WITH WHAT'S NEXT
 
-Tell me the 3 most useful things I can now ask you that I couldn't before — specific to what I told you about my work. Then ask: what's the first thing you'd like to tackle?
+Tell me the 3 most useful things I can now ask you that I couldn't before — specific to what I told you about my work. Then tell me about these commands I can use anytime:
+
+- **"switch mode"** — change to a different mode mid-session
+- **"status"** — see your current mode, session history, and workspace health
+- **"reset"** — re-run the wizard from scratch
+- **"export"** — create a shareable, anonymised version of your workspace setup
+- **"update"** — pull the latest improvements from the claude-context template
+
+Then ask: what's the first thing you'd like to tackle?
 ```
 
 ## What the wizard produces
 
 ```
-your-private-repo/
+your-workspace/
   CLAUDE.md                     ← loads your context every session
   .claude/
     modes/                      ← your personalised work modes
@@ -120,6 +165,7 @@ your-private-repo/
     style.md                    ← your communication voice
     memory.md                   ← updated automatically each session
     skills/                     ← your saved workflows
+    templates/                  ← your output formats
   config.json
 ```
 
