@@ -40,17 +40,14 @@ That's it. No re-explaining. No setup. Just work.
 
 ## Quickstart
 
-### Option A — Use the wizard (recommended)
+Open Claude Code and run:
 
-Copy the wizard prompt from `wizard.md` and paste it into a new Claude Code session. Claude will set up your entire workspace in a single conversation — creating the repo structure, interviewing you about your workflow, and generating personalised branch files.
+```bash
+git clone https://github.com/dribblo/Claude-Code-workspace.git
+cd Claude-Code-workspace
+```
 
-### Option B — Manual setup
-
-1. Copy `CLAUDE.md` into the root of your project
-2. Create `.claude/branches/`
-3. Copy a branch template from `branches/` and fill it in
-4. Create `.claude/config.json` with your name and default branch
-5. Open Claude Code — it reads `CLAUDE.md` automatically
+The wizard starts automatically. It will interview you about your work, build your personalised branch files, and set up your entire workspace in a single conversation.
 
 ---
 

@@ -4,7 +4,18 @@ You are operating in a structured workspace that follows the claude-context stan
 
 At the start of this session, before doing anything else, follow these steps exactly:
 
+## First-time setup detection
+
+Check if `.claude/branches/` contains any `.md` files (ignore `.gitkeep`).
+
+- **If no branch files exist** → this is a first-time setup. Read `wizard.md` and follow the wizard instructions inside the code block. Do not ask the user to paste anything — just run the wizard directly.
+- **If branch files exist** → this is a returning user. Skip to the **Session startup sequence** below.
+
+---
+
 ## Session startup sequence
+
+Only run this if branch files already exist in `.claude/branches/`.
 
 ### Step 1 — Read config
 Read `.claude/config.json`. Note the user's name and default branch.
