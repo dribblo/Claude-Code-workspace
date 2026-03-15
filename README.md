@@ -49,15 +49,15 @@ That's it. No re-explaining. No setup. Just work. You can switch modes mid-sessi
 
 ## Quickstart
 
-In your terminal:
+Open Claude Code and paste this:
 
-```bash
-git clone https://github.com/dribblo/Claude-Code-Workspace.git
-cd Claude-Code-Workspace
-claude
+```
+git clone https://github.com/dribblo/Claude-Code-Workspace.git && cd Claude-Code-Workspace
 ```
 
-That last command opens Claude Code in the workspace folder. Claude reads `CLAUDE.md`, sees it's your first time (no mode files yet), and walks you through a setup wizard — about 10 minutes of questions about your work, your style, and what you need help with.
+Then just say **"let's go"**.
+
+Claude reads `CLAUDE.md`, sees it's your first time, and walks you through a setup wizard — about 10 minutes of questions about your work, your style, and what you need help with.
 
 After that, every time you open Claude Code in this folder, it picks up where you left off.
 
