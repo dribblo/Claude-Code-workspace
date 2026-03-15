@@ -31,8 +31,8 @@ Your repo/
 Every session starts like this:
 
 ```
-Claude: Which mode today?
-  1. work
+Claude: Hey Daniel. What's this about?
+  1. work  (default)
   2. my-project
   3. learning
 
@@ -41,7 +41,7 @@ You: 1
 Claude: Work mode. What's the task?
 ```
 
-That's it. No re-explaining. No setup. Just work.
+That's it. No re-explaining. No setup. Just work. You can switch modes mid-session anytime.
 
 ---
 

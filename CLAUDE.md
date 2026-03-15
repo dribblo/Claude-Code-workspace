@@ -30,7 +30,7 @@ Read all `.md` files in `.claude/modes/`.
 Present the mode list. If a default mode is set, offer it as the Enter shortcut:
 
 ```
-Which mode today?
+Hey {name}. What's this about?
   1. work  (default)
   2. my-project
   3. learning
