@@ -1,13 +1,26 @@
 # Claude Code Workspace
 
-> A simple way to make Claude Code remember who you are.
+> Stop chatting with AI. Start building with it.
 
-I got tired of re-explaining myself every time I opened Claude Code. So I built a workspace structure that makes it context-aware from the first message. Clone it, run through a short setup, and every future session starts already knowing you.
+Most people use AI the same way every time: open a chat, explain who they are, explain what they need, get a generic answer, close the tab. Next day, repeat.
 
-**Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — available in the terminal or inside the Claude desktop app.
+This project is for people who are done with that.
 
-<!-- TODO: Add demo GIF showing the wizard and mode selector in action -->
-<!-- ![Claude Code Workspace demo](demo.gif) -->
+Claude Code Workspace is a file structure that makes Claude Code context-aware from the first message — every session. It knows your role, your team, your domain, your communication style, and your standards. No plugin, no extension, no code. Just structured markdown files and a 10-minute setup.
+
+**The result:** You stop explaining yourself and start doing real work. A rough idea becomes a structured PRD. A product decision becomes a stakeholder update tailored to the right person. A messy brain dump becomes execution-ready output — in your format, in your voice, with your context already loaded.
+
+**Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — Anthropic's coding agent, available in the terminal or the Claude desktop app.
+
+---
+
+## See it in action
+
+[Claude-Code-for-PM](https://github.com/dribblo/Claude-Code-for-PM) is a working example — a Product Manager's workspace built from this template. It has real modes (product, launch, alignment, review), real skills (idea-to-PRD, PRD-to-stories), and real templates (PRDs, founder updates, launch assessments).
+
+In one session, the PM went from *"I need a PRD for insurance integration via API"* to a full, execution-ready PRD with workflow breakdowns, functional requirements, edge cases, and user stories — because the workspace already knew the domain, the team, the personas, and the output format.
+
+That's the difference between chatting and building.
 
 ---
 
@@ -15,122 +28,136 @@ I got tired of re-explaining myself every time I opened Claude Code. So I built 
 
 Claude Code automatically reads a file called `CLAUDE.md` when it starts. This is a built-in feature — not something this project adds.
 
-What this project does is give you a ready-made `CLAUDE.md` and a set of files that work together to make Claude context-aware. Everything here is prompt engineering — there's no plugin, no extension, no code. Just structured markdown files that tell Claude how to behave.
+What this project does is give you a structured `CLAUDE.md` and a set of files that make Claude context-aware across sessions. Everything here is prompt engineering — structured markdown that tells Claude how to behave.
 
 ```
 Your workspace/
-  CLAUDE.md          ← auto-read by Claude Code at session start
+  CLAUDE.md            ← auto-read by Claude Code at session start
+  wizard.md            ← interactive setup (runs once)
   .claude/
+    config.json        ← your name, default mode
     modes/
-      work.md        ← context for work tasks
-      my-project.md  ← context for a specific project
-      learning.md    ← context for study sessions
-    templates/       ← output formats you use repeatedly
-    skills/          ← reusable shortcuts
-    config.json      ← your name, default mode, preferences
+      work.md          ← context for work tasks
+      my-project.md    ← context for a specific project
+    people.md          ← key people and relationships
+    glossary.md        ← domain terms and language
+    decisions.md       ← settled decisions (not reopened)
+    rules.md           ← hard constraints for every session
+    style.md           ← your communication style
+    memory.md          ← session log (auto-updated)
+    skills/            ← reusable workflow shortcuts
+    templates/         ← output formats you use repeatedly
 ```
 
 Every session starts like this:
 
 ```
 Claude: Hey Daniel. What's this about?
-  1. work  (default)
-  2. my-project
-  3. learning
+  1. product  (default)
+  2. launch
+  3. alignment
+  4. review
 
 You: 1
 
-Claude: Work mode. What's the task?
+Claude: Product mode. What are we working on today —
+        a new feature, refining something existing, or making a decision?
 ```
 
-That's it. No re-explaining. No setup. Just work. You can switch modes mid-session anytime.
+No re-explaining. No setup. Just work.
 
 ---
 
 ## Quickstart
 
-Open Claude Code and paste this:
+**1. Clone this repo and open Claude Code inside it:**
 
 ```
-git clone https://github.com/dribblo/Claude-Code-Workspace.git && cd Claude-Code-Workspace
+git clone https://github.com/dribblo/Claude-Code-Workspace.git
+cd Claude-Code-Workspace
 ```
 
-Then just say **"let's go"**.
+**2. Open Claude Code and say "let's go".**
 
-Claude reads `CLAUDE.md`, sees it's your first time, and walks you through a setup wizard — about 10 minutes of questions about your work, your style, and what you need help with.
+Claude reads `CLAUDE.md`, sees it's your first time, and starts a setup wizard — about 10 minutes of questions about your work, your people, your recurring tasks, and how you communicate. No technical knowledge needed.
 
-After that, every time you open Claude Code in this folder, it picks up where you left off.
+**3. That's it.**
+
+Every future session in this folder starts with your modes, your context, and your standards already loaded. The workspace grows with you — Claude suggests additions to your glossary, people, and decisions as you work.
 
 ---
 
-## Modes
+## What you get
 
-A mode is a markdown file that tells Claude:
+### Modes
+Contexts you switch between. Each one tells Claude who you are, what you're doing, how to behave, and what to ask first.
 
-- **Who you are** in this context
-- **What this mode is for**
-- **How you want Claude to behave**
-- **Background knowledge** it should always have
-- **A kick-off question** to open every session
-
-The wizard builds these based on your answers. Here are some examples of what people create:
-
-| Mode | Use case |
+| Example mode | Use case |
 |---|---|
 | `work.md` | Day-to-day tasks, documents, communication |
-| `email.md` | Fast email drafts in your voice |
 | `strategy.md` | Research, analysis, one-pagers |
-| `learning.md` | Studying, understanding new topics |
-| `personal.md` | Life admin, planning, personal projects |
+| `alignment.md` | Adapting the same thinking for different audiences |
+| `review.md` | Pressure-testing logic and flows before they ship |
+| `learning.md` | Studying, understanding new topics deeply |
+
+### Memory layer
+Persistent context that applies across all modes — people, glossary, decisions, rules, communication style, and a session log that grows automatically.
+
+### Skills
+Reusable shortcuts for recurring work. Example: "idea-to-PRD" takes a rough idea and produces a structured PRD with requirements, edge cases, and user stories — following your template, in your format.
+
+### Templates
+Output formats you use repeatedly — PRDs, stakeholder updates, user stories, assessments. Claude uses the right template automatically when producing output.
 
 ---
 
-## Things you can say
+## Commands
 
-These aren't built-in Claude Code commands — they work because `CLAUDE.md` instructs Claude to respond to them. They're reliable in most sessions, but they're prompt engineering, not native features.
+These work because `CLAUDE.md` instructs Claude to respond to them. They're prompt engineering, not native features — reliable in practice, but not guaranteed.
 
 | Phrase | What it does |
 |---|---|
 | `switch mode` | Change to a different mode mid-session |
 | `status` | See your current mode and recent session history |
-| `reset` | Re-run the wizard from scratch (backs up your files first) |
-| `update` | Pull the latest improvements from the template repo |
+| `reset` | Re-run the wizard from scratch (backs up first) |
+| `update` | Pull latest improvements from the template repo |
 | `export` | Create a shareable, anonymised version of your setup |
 
 ---
 
-## What happens behind the scenes
+## Who this is for
 
-All of this works through `CLAUDE.md` — a file Claude Code reads automatically. Here's the gist of what it does:
+Anyone who uses Claude Code regularly and is tired of starting from zero. The wizard is designed for non-technical users — no coding, no config files, no terminal knowledge required beyond opening Claude Code.
 
-```
-1. Reads your config (name, default mode)
-2. Loads all your context files (people, glossary, rules, style, memory)
-3. Shows your modes and asks "What's this about?"
-4. Loads the chosen mode and asks the kick-off question
-```
+Examples of what people build:
 
-It also instructs Claude to:
-
-- **Save changes automatically** — when you update your workspace files, Claude commits them so nothing gets lost
-- **Write a session summary** — at the end of each session, Claude appends a short summary to your memory file
-- **Suggest additions** — if Claude notices new terms, people, or decisions during a session, it offers to add them to your workspace
-
-These are instructions, not guarantees. They work well in practice, but they depend on Claude following the prompt — which it usually does, but not always. You can see the full `CLAUDE.md` in the repo.
+| Role | Modes they create | Skills they use |
+|---|---|---|
+| **Product Manager** | product, launch, alignment, review | idea-to-PRD, PRD-to-stories, reformat-for-audience |
+| **Founder** | strategy, ops, investor-updates | pitch-deck-section, metrics-summary |
+| **Consultant** | client-work, proposals, research | brief-to-proposal, meeting-notes-to-actions |
+| **Designer** | design-critique, research, specs | user-flow-review, design-brief |
+| **Writer** | drafting, editing, pitching | outline-to-draft, rewrite-for-audience |
 
 ---
 
-## Why I built this
+## How it's built
 
-Claude Code is powerful out of the box — but blank. Every session starts the same way: you explain who you are, what you're working on, how you like to communicate. Again. And again.
+There's no code. The entire system is markdown files that work with Claude Code's built-in behavior of reading `CLAUDE.md` at startup. The architecture:
 
-This is my solution — a file structure that Claude Code reads automatically. No plugin, no extension, no installs. It works today with the Claude Code you already have. I'm sharing it because it's been useful to me and might be useful to you.
+1. **`CLAUDE.md`** — session loader. Reads config, loads context, presents modes, starts the session.
+2. **`wizard.md`** — one-time setup. Asks questions, builds personalized modes/skills/templates.
+3. **`.claude/`** — your workspace. Modes, memory, skills, templates — all growing over time.
+
+This means it works with stock Claude Code. No dependencies, no installs, no updates to wait for.
 
 ---
 
 ## Contributing
 
-Contributions welcome — especially new mode templates. See `CONTRIBUTING.md`.
+Contributions welcome — especially **mode templates for specific roles**. If you're a lawyer, designer, teacher, researcher, consultant, or chief-of-staff and you've built a workspace that works, share the structure so others can start from it.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
