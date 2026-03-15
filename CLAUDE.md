@@ -69,7 +69,7 @@ Re-run the wizard from scratch. Ask: "This will rebuild your workspace from the 
 
 ### "update"
 Pull the latest template improvements from the upstream Claude Code Workspace repo. Steps:
-1. Check if the upstream remote exists. If not, add it: git remote add upstream https://github.com/dribblo/Claude-Code-workspace.git
+1. Check if the upstream remote exists. If not, add it: git remote add upstream https://github.com/dribblo/Claude-Code-Workspace.git
 2. Fetch upstream: git fetch upstream
 3. Show what's new (compare SPEC.md, wizard.md, modes/ templates, CONTRIBUTING.md)
 4. Ask the user which updates to apply

@@ -50,8 +50,8 @@ That's it. No re-explaining. No setup. Just work.
 Open Claude Code and run:
 
 ```bash
-git clone https://github.com/dribblo/Claude-Code-workspace.git
-cd Claude-Code-workspace
+git clone https://github.com/dribblo/Claude-Code-Workspace.git
+cd Claude-Code-Workspace
 ```
 
 The wizard starts automatically. It will interview you about your work, build your personalised mode files, and set up your entire workspace in a single conversation.
